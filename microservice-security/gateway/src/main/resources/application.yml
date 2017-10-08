@@ -1,0 +1,6 @@
+server:
+  port: 8080
+zuul:
+  routes:
+    cars:
+      url: http://localhost:8081/api/cars
