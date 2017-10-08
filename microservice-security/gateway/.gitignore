@@ -27,3 +27,4 @@ nbdist/
 gradle/
 gradlew.bat
 
+/src/main/webapp/node_modules/
