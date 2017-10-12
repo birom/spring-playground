@@ -1,0 +1,16 @@
+{
+  "createdTimestamp": 1507835921139,
+  "username": "user1",
+  "enabled": true,
+  "totp": false,
+  "emailVerified": false,
+  "requiredActions": [],
+  "notBefore": 0,
+  "access": {
+    "manageGroupMembership": true,
+    "view": true,
+    "mapRoles": true,
+    "impersonate": true,
+    "manage": true
+  }
+}

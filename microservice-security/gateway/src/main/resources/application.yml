@@ -4,3 +4,20 @@ zuul:
   routes:
     cars:
       url: http://localhost:8081/api/cars
+  sensitive-headers:
+
+security:
+  oauth2:
+    client:
+      id: microservice-security-client
+      client-id: microservice-security-client
+      client-secret: 3e6c8e47-71f5-4a47-805b-f84f7552f465
+      user-authorization-uri: http://localhost:8888/auth/realms/microservice-security-realm/protocol/openid-connect/auth
+      access-token-uri: http://localhost:8888/auth/realms/microservice-security-realm/protocol/openid-connect/token
+      grant-type: authorization_code
+    resource:
+      jwt:
+        key-value: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk0vZKkCiYALeCzs05Iily8i9ivYEMiGYBN5ESfA5LCgXkp4k1C8r+P/WPlXUGZLjklXzUPPHJ+a7T+pCaX6aKbRtIAuSGKn8f2YnnHp8t0SaHGj5SW6OueVif0mD+GKXqYR8wnH+u4MoezsBcRoHQCZR2ZrgRqjrOYtpOnTo1oaWZdPlGlaSjDCkj6ruY1XIBuui2SYLBq0AMtnTT/wwPDuEVy+nzRgiGwDnbSvudoNAV0u9DeEYG7M+K3fzmGXQsL6XDW8Y+VnbP7l40A5ZHwD0tK+dUx41v5kgYGCGZpow3BYQryKNbs3hMWFEHcNrjhLI5sVSm2MHao8LFncBqQIDAQAB
+          -----END PUBLIC KEY-----
