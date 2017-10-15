@@ -11,7 +11,7 @@ security:
     client:
       id: microservice-security-client
       client-id: microservice-security-client
-      client-secret: 3e6c8e47-71f5-4a47-805b-f84f7552f465
+      client-secret: d69b9efc-47ff-4362-9c0f-2b5cb7e7f118
       user-authorization-uri: http://localhost:8888/auth/realms/microservice-security-realm/protocol/openid-connect/auth
       access-token-uri: http://localhost:8888/auth/realms/microservice-security-realm/protocol/openid-connect/token
       grant-type: authorization_code
@@ -19,5 +19,5 @@ security:
       jwt:
         key-value: |
           -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk0vZKkCiYALeCzs05Iily8i9ivYEMiGYBN5ESfA5LCgXkp4k1C8r+P/WPlXUGZLjklXzUPPHJ+a7T+pCaX6aKbRtIAuSGKn8f2YnnHp8t0SaHGj5SW6OueVif0mD+GKXqYR8wnH+u4MoezsBcRoHQCZR2ZrgRqjrOYtpOnTo1oaWZdPlGlaSjDCkj6ruY1XIBuui2SYLBq0AMtnTT/wwPDuEVy+nzRgiGwDnbSvudoNAV0u9DeEYG7M+K3fzmGXQsL6XDW8Y+VnbP7l40A5ZHwD0tK+dUx41v5kgYGCGZpow3BYQryKNbs3hMWFEHcNrjhLI5sVSm2MHao8LFncBqQIDAQAB
+          MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmYmv8V96njvMDtjHd1gOVYGXz/0JiV/+rMs4AFUof7n5S/LGDcWfVmfa9nZOqdIkRCZYdFlgxq0MY07k+xcBX1AvjUDL0R5UOQBOjgKf4s5SWl2enLqeqL6UYvCikboQgf3FHw+TWZkJYwjOygPRBad4ojQsgp+i/Glo02bljewIDAQAB
           -----END PUBLIC KEY-----
