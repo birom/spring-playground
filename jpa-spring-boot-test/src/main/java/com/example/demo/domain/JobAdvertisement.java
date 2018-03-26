@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,6 +12,8 @@ public class JobAdvertisement {
     @Id
     private String jobAdvertisementId;
     private String fingerPrint;
+    @Embedded
+    private JobContent jobContent;
 
     public String getJobAdvertisementId() {
         return jobAdvertisementId;
@@ -26,6 +29,14 @@ public class JobAdvertisement {
 
     public void setFingerPrint(String fingerPrint) {
         this.fingerPrint = fingerPrint;
+    }
+
+    public JobContent getJobContent() {
+        return jobContent;
+    }
+
+    public void setJobContent(JobContent jobContent) {
+        this.jobContent = jobContent;
     }
 
     @Override
