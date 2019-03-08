@@ -29,7 +29,7 @@ public class ProducerApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         LOG.info("Executing kafka producer.");
 
-        IntStream.range(0, 1000)
+        IntStream.range(0, 1_000_000)
             .mapToObj(i -> String.format("num-%d", i))
             .map(TestMessage::new)
             .forEach(this::doSend);

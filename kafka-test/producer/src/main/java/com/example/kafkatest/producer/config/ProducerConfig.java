@@ -19,11 +19,6 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 @Configuration
 public class ProducerConfig {
     @Bean
-    public ProducerFactory<Integer, String> producerFactory() {
-        return new DefaultKafkaProducerFactory<>(producerConfigs());
-    }
-
-    @Bean
     public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();
         props.put(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -31,6 +26,11 @@ public class ProducerConfig {
         props.put(VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         // See https://kafka.apache.org/documentation/#producerconfigs for more properties
         return props;
+    }
+
+    @Bean
+    public ProducerFactory<Integer, String> producerFactory() {
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
