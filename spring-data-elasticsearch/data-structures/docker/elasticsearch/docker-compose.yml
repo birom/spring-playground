@@ -1,0 +1,30 @@
+version: '3'
+services:
+    elasticsearch:
+        image: elasticsearch:5.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/jobadservice/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
+        command: -Enetwork.host=0.0.0.0 -Ediscovery.type=single-node
+        networks: ['elasticstack']
+        environment:
+            - xpack.security.enabled=false
+            - xpack.monitoring.enabled=false
+
+    kibana:
+        image: kibana:5.6.5
+        container_name: kibana
+        hostname: kibana
+        ports: ['5601:5601']
+        networks: ['elasticstack']
+        depends_on: ['elasticsearch']
+        #restart: on-failure
+        environment:
+            - elasticsearch.url=http://elasticsearch:9200
+            - xpack.security.enabled=false
+            - xpack.monitoring.enabled=false
+
+networks:
+    elasticstack:
